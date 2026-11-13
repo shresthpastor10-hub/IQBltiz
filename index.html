@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudyBlitz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hamburger menu (only visible after login) -->
+  <div id="topBar" class="hidden">
+    <button id="menuButton">☰</button>
+    <div id="menu" class="hidden">
+      <button id="menuProfile">Profile</button>
+      <button id="menuHow">How to Play</button>
+      <button id="menuLogout">Logout</button>
+    </div>
+  </div>
+
+  <!-- Landing page -->
+  <div id="landingScreen">
+    <h1>StudyBlitz</h1>
+    <p>StudyBlitz is a quick quiz game for students. Pick a subject, race StudyBot to the right answer and win trophies.</p>
+    <button id="showLogin">Login</button>
+    <button id="showSignup">Signup</button>
+    <form id="loginForm">
+      <input id="loginIdentifier" placeholder="Username or email">
+      <input id="loginPassword" type="password" placeholder="Password">
+      <button type="submit">Login</button>
+    </form>
+    <form id="signupForm" class="hidden">
+      <input id="signupUsername" placeholder="Username">
+      <input id="signupEmail" placeholder="Email">
+      <input id="signupPassword" type="password" placeholder="Password (8-16 characters)">
+      <input id="signupConfirm" type="password" placeholder="Confirm password">
+      <button type="submit">Create account</button>
+    </form>
+    <p id="authMessage" class="error"></p>
+    <div id="rules">
+      <h2>How to Play</h2>
+      <ul>
+        <li>Choose one subject: Physics, Chemistry, Mathematics or Biology.</li>
+        <li>Choose Bot Mode and play against StudyBot.</li>
+        <li>A match has 5 questions. Each question has a 30 second timer.</li>
+        <li>You and StudyBot get one attempt per question.</li>
+        <li>Correct answer: +3 for you, -3 for your opponent (unless they already lost 3 on this question).</li>
+        <li>Wrong answer: -3 for you and you are frozen. Your opponent can still answer.</li>
+        <li>Both wrong: both get -3. Nobody answers in 30 seconds: both get 0.</li>
+        <li>One wrong and one silent: -3 and 0.</li>
+        <li>After 5 questions the higher score wins. Trophies change by 4 per point of difference (maximum 30).</li>
+        <li>The winner gains trophies, the loser loses the same amount, a draw changes nothing. Trophies can go below 0.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Homepage -->
+  <div id="homeScreen" class="hidden">
+    <h2>Trophies: <span id="trophyCount">0</span></h2>
+    <h3>Choose a subject</h3>
+    <div id="subjectRow">
+      <button class="subjectButton" data-subject="Physics">Physics</button>
+      <button class="subjectButton" data-subject="Chemistry">Chemistry</button>
+      <button class="subjectButton" data-subject="Mathematics">Mathematics</button>
+      <button class="subjectButton" data-subject="Biology">Biology</button>
+    </div>
+    <h3>Choose a mode</h3>
+    <button id="botModeButton">Bot Mode (against StudyBot)</button>
+    <p><button id="startButton">Start Match</button></p>
+    <p id="homeMessage" class="error"></p>
+  </div>
+
+  <!-- Profile -->
+  <div id="profileScreen" class="hidden">
+    <h2>Profile</h2>
+    <p>Username: <b id="pUsername"></b></p>
+    <p>Current trophies: <b id="pTrophies"></b></p>
+    <p>Total quizzes played: <b id="pPlayed"></b></p>
+    <p>Quizzes won: <b id="pWon"></b></p>
+    <p>Quizzes lost: <b id="pLost"></b></p>
+    <p>Draws: <b id="pDraws"></b></p>
+    <p>Total correctly answered questions: <b id="pCorrect"></b></p>
+    <button class="backButton">Back</button>
+  </div>
+
+  <!-- How to Play (filled by app.js from the rules above) -->
+  <div id="howScreen" class="hidden">
+    <div id="howBox"></div>
+    <button class="backButton">Back</button>
+  </div>
+
+  <!-- Quiz -->
+  <div id="quizScreen" class="hidden">
+    <div id="scoreBoard">
+      <div>
+        <b id="userName" class="blue"></b>: <span id="userScore">0</span>
+        <div id="userDots"></div>
+      </div>
+      <div class="right">
+        <b class="red">StudyBot</b>: <span id="botScore">0</span>
+        <div id="botDots"></div>
+      </div>
+    </div>
+    <p>Question <span id="questionNumber">1</span> of 5 - <span id="timeLeft">30</span> seconds left</p>
+    <h3 id="questionText"></h3>
+    <button class="optionButton" data-option="A"></button>
+    <button class="optionButton" data-option="B"></button>
+    <button class="optionButton" data-option="C"></button>
+    <button class="optionButton" data-option="D"></button>
+    <p id="quizMessage"></p>
+  </div>
+
+  <!-- Result -->
+  <div id="resultScreen" class="hidden">
+    <h2 id="resultBanner"></h2>
+    <p>Winner: <b id="resultWinner"></b></p>
+    <p>Final score: <span id="resultScore"></span></p>
+    <p>Trophies this match: <b id="resultChange"></b></p>
+    <p>Total trophies: <b id="resultTrophies"></b></p>
+    <button id="playAgainButton">Play New Match</button>
+    <button id="backHomeButton">Back to Homepage</button>
+  </div>
+
+  <script src="app.js"></script> <!--this will be added later-->
+</body>
+</html>
