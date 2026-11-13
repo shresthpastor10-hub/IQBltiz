@@ -130,3 +130,291 @@ input { display: block; margin: 6px 0; padding: 6px; width: 260px; }
   opacity: 0.85;
 }
 
+
+
+/* ==========================================================================
+   Brand Callout & Responsive Footer
+   ========================================================================== */
+
+.game-callout-footer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1240px;
+  margin: 4rem auto 0;
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  clear: both;
+}
+
+.callout-grid {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Left: 2x2 Social Icon Grid */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  flex: 0 0 auto;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 135px;
+  height: 135px;
+  border-radius: 28px;
+  box-shadow:
+    0 8px 0 rgba(0, 0, 0, 1),
+    0 16px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.15s ease;
+  border: 2px solid #000000;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.social-card svg {
+  width: 100%;
+  height: auto;
+  fill: #000000;
+  transition: transform 0.2s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 0 rgba(0, 0, 0, 1),
+    0 20px 24px rgba(0, 0, 0, 0.5);
+}
+
+.social-card:hover svg {
+  transform: scale(1.12);
+}
+
+.social-card:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 1);
+}
+
+/* Right: Lime Green CTA Banner Card */
+.action-cta-card {
+  flex: 2 1 500px;
+  background-color: #D9480F;
+  border-radius: 28px;
+  padding: 2.25rem 3rem;
+  border: 3px solid #000000;
+  box-shadow:
+    0 8px 0 rgba(0, 0, 0, 1),
+    0 16px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.cta-inner-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  z-index: 2;
+}
+
+.cta-typography-pane {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.cta-headline {
+  font-family: var(--font-display, 'Anton', 'Bebas Neue', sans-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.025em;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Sticker Image Slot */
+.cta-illustration-pane {
+  flex: 0 0 clamp(170px, 18vw, 240px);
+  height: clamp(170px, 18vw, 240px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-sticker-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.25));
+  transition: transform 0.25s ease;
+}
+
+.cta-sticker-img:hover {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+/* Bottom Lavender Footer */
+.bottom-site-footer {
+  width: 100%;
+  background-color: #FFB703;
+  color: #000000;
+  border-radius: 32px 32px 16px 16px;
+  border: 3px solid #000000;
+  box-shadow:
+    0 8px 0 rgba(0, 0, 0, 1),
+    0 16px 20px rgba(0, 0, 0, 0.45);
+  margin-top: 0.5rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.25rem 3rem;
+  gap: 2rem;
+}
+
+.brand-logotype {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  user-select: none;
+}
+
+.logo-mark,
+.logo-name {
+  font-family: var(--font-display, 'Anton', sans-serif);
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.logo-mark {
+  letter-spacing: -0.05em;
+}
+
+.logo-name {
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+}
+
+.footer-link-item {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.15s ease;
+}
+
+.arrow-glyph {
+  font-size: 1.15rem;
+  line-height: 1;
+  font-weight: 900;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.footer-link-item:hover {
+  transform: translateX(-4px);
+}
+
+.footer-link-item:hover .arrow-glyph {
+  transform: translate(3px, -3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 850px) {
+  .social-grid {
+    flex: 1 1 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .social-card {
+    width: auto;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    padding: 1.25rem;
+  }
+  .cta-inner-wrapper {
+    flex-direction: column;
+  }
+  .cta-illustration-pane {
+    order: -1;
+    width: 160px;
+    height: 160px;
+  }
+  .cta-typography-pane {
+    justify-content: center;
+    text-align: center;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .social-card {
+    padding: 1.75rem;
+  }
+  .footer-inner {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/*container */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.flex-item {
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+}
+
+/* Make a one column-layout instead of three-column layout 
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}*/
+
