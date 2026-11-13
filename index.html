@@ -18,27 +18,11 @@
   </div>
 
   <!-- Landing page -->
-  <div id="landingScreen">
-    <h1>StudyBlitz</h1>
-    <p>StudyBlitz is a quick quiz game for students. Pick a subject, race StudyBot to the right answer and win trophies.</p>
-    <button id="showLogin">Login</button>
-    <button id="showSignup">Signup</button>
-    <form id="loginForm">
-      <input id="loginIdentifier" placeholder="Username or email">
-      <input id="loginPassword" type="password" placeholder="Password">
-      <button type="submit">Login</button>
-    </form>
-    <form id="signupForm" class="hidden">
-      <input id="signupUsername" placeholder="Username">
-      <input id="signupEmail" placeholder="Email">
-      <input id="signupPassword" type="password" placeholder="Password (8-16 characters)">
-      <input id="signupConfirm" type="password" placeholder="Confirm password">
-      <button type="submit">Create account</button>
-    </form>
-    <p id="authMessage" class="error"></p>
-    <div id="rules">
+  <div id="landingScreen" >
+    <h1 class="hero-title">Study<span class="line-accent">Blitz</span></h1>
+    
       <h2>How to Play</h2>
-      <ul>
+      <ul class="box1" >
         <li>Choose one subject: Physics, Chemistry, Mathematics or Biology.</li>
         <li>Choose Bot Mode and play against StudyBot.</li>
         <li>A match has 5 questions. Each question has a 30 second timer.</li>
@@ -51,7 +35,33 @@
         <li>The winner gains trophies, the loser loses the same amount, a draw changes nothing. Trophies can go below 0.</li>
       </ul>
     </div>
+
+<!-- New Row: Sticker + Side Quote (Placed strictly below the text) -->
+  <div class="sticker-quote-row">
+    <div class="sticker-box">
+      <img src="stick1.png" alt="Brain gaining focus" class="focus-sticker">
+      </div>
+
+      <div class="quote-box">
+      <h2 class="quote-heading">YOUR BRAIN’S DAILY ARENA.</h2>
+      <blockquote class="side-quote">
+      "Race the clock, beat your rival, and climb the ranks."
+    </blockquote>
+    </div>
   </div>
+  <div class="sticker-quote-row">
+    <div class="sticker-box">
+      <img src="stick2.png" alt="Brain gaining focus" class="focus-sticker">
+      </div>
+
+      <div class="quote-box">
+      <h2 class="quote-heading">GRIND SMARTER, NOT LONGER</h2>
+      <blockquote class="side-quote">
+      "Every quick match trains your recall under real pressure."
+    </blockquote>
+    </div>
+  </div>
+  
 
   <!-- Homepage -->
   <div id="homeScreen" class="hidden">
