@@ -1,4 +1,3 @@
-# IQBltiz
 ⚡ IQBlitz
 
 Compete. Practise. Sharpen your mind.
